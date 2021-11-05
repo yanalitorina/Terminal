@@ -1,0 +1,61 @@
+/home/yana/QA                     1) Посмотреть где я
+                                     pwd
+                                  2) Создать папку
+                                    mkdir hw_terminal_1
+                                  3) Зайти в папку
+                                    cd hw_terminal_1
+                                  4) Создать 3 папки
+                                    mkdir f_1 f_2 f_3
+                                  5) Зайти в любоую папку
+                                    cd f_1
+/home/yana/QA/hw_terminal_1/f_1   6) Создать 5 файлов (3 txt, 2 json)
+                                    touch text_1.txt text_2.txt text_3.txt text_4.json text_5.json
+                                  7) Создать 3 папки
+                                    mkdir -p d_1/d_1/d_3
+                                  8) Вывести список содержимого папки
+                                    ls -la
+                                  9) + Открыть любой txt файл
+                                    vim text_1.txt
+                                  10) + написать туда что-нибудь, любой текст.
+(INSERT)                            Hello!
+                                    Me name is Yana Litorina
+                                    I'm from Minsk
+                                  11) + сохранить и выйти.
+                                    esc
+                                    :wq
+                                  12) Выйти из папки на уровень выше
+/home/yana/QA/hw_terminal_1         cd ..
+                                  13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+cd f_1 
+/home/yana/QA/hw_terminal_1/f_1     mv text_4.json text_5.json ~/QA/hw_terminal_1/f_1/d_1
+                                  14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+                                    cp text_1.txt text_2.txt ~/QA/hw_terminal_1/f_1/d_1/d_2
+                                  15) Найти файл по имени
+                                    find . -iname *text_4.json*
+                                  16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+                                     tail -f text_1.txt
+                                  17) вывести несколько первых строк из текстового файла
+                                     head -2 text_1.txt 
+                                  18) вывести несколько последних строк из текстового файла
+                                     tail -3 text_.txt
+                                  19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+                                    less text_1.txt
+                                  20) вывести дату и время
+                                    date
+Задание *
+                                1) Отправить http запрос на сервер. http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+                                   curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+                                2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+                                  touch my_script.sh
+                                  vim my_script.sh (INSERT)
+                                      #!/bin/bash
+                                      cd hw_terminal_1
+                                      mkdir f_1 f_2 f_3
+                                      cd f_1
+                                      touch text_1.txt text_2.txt text_3.txt text_4.json text_5.json
+                                      mkdir -p d_1/d_1/d_3
+                                      ls -la
+                                      mv text_4.json text_5.json ~/QA/hw_terminal_1/f_1/d_1/
+                                  esc :wq
+                                  chmod +x ./my_script.sh
+                                  ./my_script.sh
